@@ -20,7 +20,7 @@ $(NAME)	:	$(OBJ)
 clean	:
 	$(RM) $(OBJ)
 
-flcean	:	clean
+fclean	:	clean
 	$(RM) $(NAME)
 
 re		: flcean all
