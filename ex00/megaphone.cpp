@@ -2,19 +2,16 @@
 
 void	convertToUpper(int argc, char **argv) {
 	for(int i = 1; i < argc; i++) {
-		for(int j = 0; argv[i][j]; j++) {
-			char upperCaseLetter = toupper(argv[i][j]);
-			std::cout << upperCaseLetter;
-		}
+		for(int j = 0; argv[i][j]; j++)
+			std::cout << (char)toupper(argv[i][j]);
 	}
+	std::cout << '\n';
 }
 
 int main(int argc, char	**argv) {
-	if (argc == 1) {
+	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return 0;
-	}
-	convertToUpper(argc, argv);
-	std::cout << '\n';
+	else
+		convertToUpper(argc, argv);
 	return 0;
 }
