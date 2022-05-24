@@ -5,12 +5,12 @@ void	convertToUpper(int argc, char **argv) {
 		for(int j = 0; argv[i][j]; j++)
 			std::cout << (char)toupper(argv[i][j]);
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 }
 
 int main(int argc, char	**argv) {
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 		convertToUpper(argc, argv);
 	return 0;
