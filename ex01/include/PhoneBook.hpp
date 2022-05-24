@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:38:08 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/24 15:00:58 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/24 20:09:45 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ class	PhoneBook {
 
 		PhoneBook();
 
-		void	add(void);
-		void	search(void);
+		void		add(void);
+		void		search(void);
+		void		printContactInfo(int index);
+		std::string	enterContactInfo(std::string fieldName);
 
 	private:
 
 		Contact	contacts[8];
 		int		contactsCounter;
-		
+
 };
 
 #endif

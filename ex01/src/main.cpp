@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:42:10 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/24 16:12:35 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/24 20:39:27 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include <iostream>
 
 int main() {
+	
 	PhoneBook	phonebook;
 	std::string	input;
 
-	while (input.compare("EXIT")) {
-
+	while (input.compare("EXIT") && !std::cin.eof()) {
 		std::cout << "Enter a command -> ";		
 		std::getline(std::cin, input);
 		
@@ -27,7 +27,7 @@ int main() {
 			phonebook.add();
 		else if (!input.compare("SEARCH"))
 			phonebook.search();
-
 	}
+
 	return 0;
 }
