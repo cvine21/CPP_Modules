@@ -1,4 +1,4 @@
-NAME		=	phonebook
+NAME		=	account
 
 INCLUDE		=	include/
 
@@ -6,7 +6,7 @@ SRC_PATH	=	src/
 
 HEADER		=	$(addprefix $(INCLUDE), Account.hpp)
 
-SRC			=	$(addprefix $(SRC_PATH), Account.cpp tests.cpp)
+SRC			=	$(addprefix $(SRC_PATH), Account.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
