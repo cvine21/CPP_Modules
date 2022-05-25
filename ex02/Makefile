@@ -6,7 +6,7 @@ SRC_PATH	=	src/
 
 HEADER		=	$(addprefix $(INCLUDE), Account.hpp)
 
-SRC			=	$(addprefix $(SRC_PATH), Account.cpp)
+SRC			=	$(addprefix $(SRC_PATH), Account.cpp tests.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
