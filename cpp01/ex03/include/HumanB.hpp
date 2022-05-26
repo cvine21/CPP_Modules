@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:47:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/26 10:13:43 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/26 12:45:17 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
+# include "Weapon.hpp"
 # include <string>
 
 // ************************************************************************** //
-//                               Zombie Class                                 //
+//                               HumanB Class                                 //
 // ************************************************************************** //
 
-class Zombie {
+class HumanB {
 
 	public:
 
-		Zombie( std::string name );
-		~Zombie();
+		HumanB( std::string name );
 
-		std::string	getName( void );
-		
-		void		announce( void );
+		std::string	getName( void ) const;
+		void		setWeapon( Weapon &weapon );
+
+		void		attack( void );
 
 	private:
 	
 		std::string	name;
+		Weapon		*weapon;
 
 };
 
-void	randomChump( std::string name );
-Zombie*	newZombie( std::string name );
-
-#endif /* __ZOMBIE_HPP__ */
+#endif /* __HUMANB_HPP__ */

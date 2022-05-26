@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 18:47:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/26 10:13:43 by cvine            ###   ########.fr       */
+/*   Created: 2022/05/26 10:12:13 by cvine             #+#    #+#             */
+/*   Updated: 2022/05/26 11:01:36 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-# include <string>
+#include <string>
 
 // ************************************************************************** //
 //                               Zombie Class                                 //
@@ -23,11 +23,12 @@ class Zombie {
 
 	public:
 
-		Zombie( std::string name );
+		Zombie();
 		~Zombie();
 
 		std::string	getName( void );
-		
+		void		setName( std::string name );
+
 		void		announce( void );
 
 	private:
@@ -36,7 +37,6 @@ class Zombie {
 
 };
 
-void	randomChump( std::string name );
-Zombie*	newZombie( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif /* __ZOMBIE_HPP__ */
