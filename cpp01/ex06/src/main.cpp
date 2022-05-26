@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:45:35 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/26 16:03:12 by cvine            ###   ########.fr       */
+/*   Created: 2022/05/26 17:10:38 by cvine             #+#    #+#             */
+/*   Updated: 2022/05/26 21:35:50 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
-#include <string>
+#include "Harl.hpp"
+#include <iostream>
 
-void	strReplace( std::string filename ) {
-	
-	std::ifstream	infile;
+int	main( int argc, char **argv )
+{
+	Harl harl;
+	(void)argc;
 
-	
+	harl.complain(argv[1]);
+	return 0;
 
 }

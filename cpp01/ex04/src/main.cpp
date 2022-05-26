@@ -6,19 +6,15 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:57:33 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/26 14:02:44 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/26 14:55:17 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "Replacer.hpp"
 
 int main(int argc, char **argv) {
 
-	std::ifstream 	srcFile;
-
-	srcFile.open() 
+	Replacer	Replacer(argv[1], argv[2], argv[3]);
 
 	return 0;
 
