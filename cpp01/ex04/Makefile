@@ -1,12 +1,12 @@
-NAME		=	violence
+NAME		=	sed
 
 INCLUDE		=	include/
 
 SRC_PATH	=	src/
 
-HEADER		=	$(addprefix $(INCLUDE), .hpp)
+HEADER		=	$(addprefix $(INCLUDE), Replacer.hpp)
 
-SRC			=	$(addprefix $(SRC_PATH), main.cpp)
+SRC			=	$(addprefix $(SRC_PATH), Replacer.cpp main.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
