@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 13:41:56 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/28 15:47:59 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/29 20:45:33 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(Fixed const &x) {
 
 	std::cout << "Copy constructor called" << std::endl;
 
-	*this = x;
+	this->value = x.getRawBits();
 
 }
 

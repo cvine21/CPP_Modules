@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 13:45:28 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/29 13:44:15 by cvine            ###   ########.fr       */
+/*   Updated: 2022/05/29 21:13:54 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int main( void ) {
 	std::cout << "a * b = " << (a * b) << std::endl;
 	std::cout << "a / b = " << (a / b) << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl;
+	std::cout << "max(a, b) = " << Fixed::max( a, b ) << std::endl;
+	std::cout << "min(a, b) = " << Fixed::min( a, b ) << std::endl;
 
 	return 0;
 
