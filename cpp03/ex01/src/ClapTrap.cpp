@@ -34,6 +34,12 @@ _attackDamage(x._attackDamage) {
 
 }
 
+ClapTrap::~ClapTrap( void ) {
+
+	std::cout << "ClapTrap destructor called" << std::endl;
+
+}
+
 ClapTrap & ClapTrap::operator = ( ClapTrap const& x ) {
 
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
@@ -49,11 +55,15 @@ ClapTrap & ClapTrap::operator = ( ClapTrap const& x ) {
 
 }
 
-ClapTrap::~ClapTrap( void ) {
+std::string	ClapTrap::getName( void ) const {return _name; }
+int			ClapTrap::getHP( void ) const {return _hitPoints; }
+int			ClapTrap::getEP( void ) const {return _energyPoints; }
+int			ClapTrap::getAD( void ) const {return _attackDamage; }
 
-	std::cout << "ClapTrap destructor called" << std::endl;
-
-}
+void		ClapTrap::setName( std::string name ) { _name = name; };
+void		ClapTrap::setHP( int amount ) { _hitPoints = amount; };
+void		ClapTrap::setEP( int amount ) { _energyPoints = amount; };
+void		ClapTrap::setAD( int amount ) { _attackDamage = amount; };
 
 void	ClapTrap::attack( const std::string& target ) {
 
@@ -80,7 +90,6 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 		std::cout << "ClapTrap " << _name << ": -" << amount << "hp";
 	} else
 		std::cout << "ClapTrap " << _name << " is already dead";
-
 	std::cout << std::endl;
 
 };

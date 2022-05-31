@@ -1,18 +1,18 @@
-NAME		=	claptrap
+NAME		=	diamond
 
 INCLUDE		=	include/
 
 SRC_PATH	=	src/
 
-HEADER		=	$(addprefix $(INCLUDE), ClapTrap.hpp)
+HEADER		=	$(addprefix $(INCLUDE), DiamondTrap.hpp FragTrap.hpp ScavTrap.hpp ClapTrap.hpp)
 
-SRC			=	$(addprefix $(SRC_PATH), ClapTrap.cpp main.cpp)
+SRC			=	$(addprefix $(SRC_PATH), DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
 CC			=	g++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
+CFLAGS		=	-Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -I$(INCLUDE)
 
 .PHONY		=	all clean flcean re
 

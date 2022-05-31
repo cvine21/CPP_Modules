@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 18:47:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/05/28 15:52:41 by cvine            ###   ########.fr       */
+/*   Created: 2022/05/31 17:01:43 by cvine             #+#    #+#             */
+/*   Updated: 2022/05/31 17:01:43 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ class ClapTrap {
 		~ClapTrap( void );
 		ClapTrap & operator = ( ClapTrap const& );
 
-		void attack( const std::string& );
-		void takeDamage( unsigned int );
-		void beRepaired( unsigned int );
+		std::string	getName( void ) const;
+		int			getHP( void ) const;
+		int			getEP( void ) const;
+		int			getAD( void ) const;
 
-	private:
+		void		setName( std::string );
+		void		setHP( int );
+		void		setEP( int );
+		void		setAD( int );
+
+		void		attack( const std::string& );
+		void		takeDamage( unsigned int );
+		void		beRepaired( unsigned int );
+
+	protected:
 	
 		std::string _name;
 		int			_hitPoints;

@@ -1,12 +1,12 @@
-NAME		=	claptrap
+NAME		=	fragtrap
 
 INCLUDE		=	include/
 
 SRC_PATH	=	src/
 
-HEADER		=	$(addprefix $(INCLUDE), ClapTrap.hpp)
+HEADER		=	$(addprefix $(INCLUDE), FragTrap.hpp ScavTrap.hpp ClapTrap.hpp)
 
-SRC			=	$(addprefix $(SRC_PATH), ClapTrap.cpp main.cpp)
+SRC			=	$(addprefix $(SRC_PATH), FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
