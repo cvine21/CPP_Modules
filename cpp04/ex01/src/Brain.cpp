@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:25:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:41:34 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 17:35:25 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Brain::Brain( Brain const& x ) {
 	std::cout << "Brain copy constructor called" << std::endl;
 
 	for (int i = 0; i < 100; i++)
-			_ideas[i] = x._ideas[i];
+		_ideas[i] = x._ideas[i];
 
 }
 
@@ -44,3 +44,5 @@ Brain::~Brain( void ) {
 	std::cout << "Brain destructor called" << std::endl;
 
 }
+
+std::string	Brain::getIdea( int index ) const {return _ideas[index];}

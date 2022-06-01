@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:09:18 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:13:21 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 17:28:09 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Brain {
 		Brain( Brain const& );
 		virtual ~Brain( void );
 		Brain & operator = ( Brain const& );
+
+		std::string	getIdea( int ) const;
 
 	private:
 	

@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:30:51 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:42:05 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 17:12:34 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Dog::Dog( Dog const& x ) {
 	std::cout << "Dog copy constructor called" << std::endl;
 
 	_type = x.getType();
-	delete _brain;
-	_brain = x._brain;
+	_brain = new Brain();
+	*_brain = *(x._brain);
 
 }
 
@@ -38,7 +38,8 @@ Dog & Dog::operator = ( Dog const& x ) {
 	if (this != &x) {
 		_type = x.getType();
 		delete _brain;
-		_brain = x._brain;
+		_brain = new Brain();
+		*_brain = *(x._brain);
 	}
 
 	return (*this);
@@ -51,6 +52,8 @@ Dog::~Dog( void ) {
 	delete _brain;
 
 }
+
+Brain	*Dog::getBrain( void ) const { return _brain; }
 
 void	Dog::makeSound( void ) const {
 

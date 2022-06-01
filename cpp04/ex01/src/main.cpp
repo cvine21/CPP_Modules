@@ -6,37 +6,39 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:36:55 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:55:01 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 17:31:27 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	const WrongAnimal* wrongCat = new WrongCat();
-
-	std::cout << dog->getType() << " " << std::endl;
-	std::cout << cat->getType() << " " << std::endl;
-	std::cout << "Cat: ";
-	cat->makeSound();
-	std::cout << "Dog: ";
-	dog->makeSound();
-	std::cout << "Meta animal: ";
-	meta->makeSound();
-
-	std::cout << "WrongCat: ";
-	wrongCat->makeSound();
-
-	delete meta;
-	delete dog;
-	delete cat;
-	delete wrongCat;
-
-	return 0;
+	{
+		Animal *Animals[10];
+		for (int i = 0; i < 10; ++i)
+		{
+			if (i < 5)
+				Animals[i] = new Dog();
+			else
+				Animals[i] = new Cat();
+		}
+		std::cout << "DEEP COPY!!" << std::endl;
+		std::cout << "-----------------------------" << std::endl;
+		Dog copy(*(Dog *)Animals[4]);
+		for (int i = 0; i < 100; ++i)
+		{
+			std::cout << copy.getBrain()->getIdea(i) << "    ";
+			std::cout << ((Dog *)Animals[4])->getBrain()->getIdea(i) << std::endl;
+		}
+		std::cout << "-----------------------------"
+				  << std::endl;
+		for (int i = 0; i < 10; ++i)
+		{
+			delete Animals[i];
+		}
+	}
+	// system("leaks Polymorphism");
 }
