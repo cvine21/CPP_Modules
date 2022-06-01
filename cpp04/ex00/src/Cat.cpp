@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:30:51 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:35:43 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:21:54 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::Cat( Cat const& x ) {
 
 	std::cout << "Cat copy constructor called" << std::endl;
 
-	_type = x._type;
+	_type = x.getType();
 
 }
 
@@ -33,7 +33,7 @@ Cat & Cat::operator = ( Cat const& x ) {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 
 	if (this != &x)
-		_type = x._type;
+		_type = x.getType();
 
 	return (*this);
 

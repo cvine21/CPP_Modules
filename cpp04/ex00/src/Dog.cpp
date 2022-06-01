@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:30:51 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 11:46:11 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:22:12 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog::Dog( Dog const& x ) {
 
 	std::cout << "Dog copy constructor called" << std::endl;
 
-	_type = x._type;
+	_type = x.getType();
 
 }
 
@@ -33,7 +33,7 @@ Dog & Dog::operator = ( Dog const& x ) {
 	std::cout << "Dog copy assignment operator called" << std::endl;
 
 	if (this != &x)
-		_type = x._type;
+		_type = x.getType();
 
 	return (*this);
 

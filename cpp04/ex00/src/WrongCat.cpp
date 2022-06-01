@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:18:50 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:18:52 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:23:14 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat::WrongCat( WrongCat const& x ) {
 
 	std::cout << "WrongCat copy constructor called" << std::endl;
 
-	_type = x._type;
+	_type = x.getType();
 
 }
 
@@ -33,7 +33,7 @@ WrongCat & WrongCat::operator = ( WrongCat const& x ) {
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 
 	if (this != &x)
-		_type = x._type;
+		_type = x.getType();
 
 	return (*this);
 
