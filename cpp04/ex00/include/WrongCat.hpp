@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:39:08 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/01 12:18:35 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/01 12:28:41 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
 // ************************************************************************** //
-//                                  Cat Class                                 //
+//                                WrongCat Class                              //
 // ************************************************************************** //
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
 
 	public:
 
-		Cat( void );
-		Cat( std::string );
-		Cat( Cat const& );
-		~Cat( void );
-		Cat & operator = ( Cat const& );
+		WrongCat( void );
+		WrongCat( std::string );
+		WrongCat( WrongCat const& );
+		~WrongCat( void );
+		WrongCat & operator = ( WrongCat const& );
 
 		void	makeSound( void ) const;
 
 };
 
-#endif /* __CAT_HPP__ */
+#endif /* __WRONGCAT_HPP__ */

@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:39:08 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/01 12:11:27 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/01 12:38:55 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
 // ************************************************************************** //
-//                                  Cat Class                                 //
+//                                WrongAnimal Class                           //
 // ************************************************************************** //
 
-class Cat : public Animal {
+class WrongAnimal {
 
 	public:
 
-		Cat( void );
-		Cat( std::string );
-		Cat( Cat const& );
-		~Cat( void );
-		Cat & operator = ( Cat const& );
+		WrongAnimal( void );
+		WrongAnimal( std::string );
+		WrongAnimal( WrongAnimal const& );
+		~WrongAnimal( void );
+		WrongAnimal & operator = ( WrongAnimal const& );
+
+		std::string	getType( void ) const;
 
 		void	makeSound( void ) const;
 
+	protected:
+	
+		std::string	_type;
+
 };
 
-#endif /* __CAT_HPP__ */
+#endif /* __WRONGANIMAL_HPP__ */

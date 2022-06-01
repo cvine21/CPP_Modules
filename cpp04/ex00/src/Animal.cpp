@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:25:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:03:41 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 12:41:11 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ std::string	Animal::getType( void ) const { return _type; }
 
 void	Animal::makeSound( void ) const {
 
-	std::cout << "<sound>" << std::endl;
+	std::cout << "<meta sound>" << std::endl;
 
 }
