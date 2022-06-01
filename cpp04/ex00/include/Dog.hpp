@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 11:46:16 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:06:45 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Dog : public Animal {
 	public:
 
 		Dog( void );
-		Dog( std::string );
 		Dog( Dog const& );
 		~Dog( void );
 		Dog & operator = ( Dog const& );

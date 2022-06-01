@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:18:35 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:28:41 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:06:50 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class WrongCat : public WrongAnimal {
 	public:
 
 		WrongCat( void );
-		WrongCat( std::string );
 		WrongCat( WrongCat const& );
 		~WrongCat( void );
 		WrongCat & operator = ( WrongCat const& );

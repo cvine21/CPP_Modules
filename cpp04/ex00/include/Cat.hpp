@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:39:08 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:06:43 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Cat : public Animal {
 	public:
 
 		Cat( void );
-		Cat( std::string );
 		Cat( Cat const& );
 		~Cat( void );
 		Cat & operator = ( Cat const& );

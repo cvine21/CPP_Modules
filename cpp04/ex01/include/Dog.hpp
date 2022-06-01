@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 12:11:27 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:06:48 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/01 11:46:16 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+# include "Animal.hpp"
 
 // ************************************************************************** //
-//                                WrongAnimal Class                           //
+//                                  Dog Class                                 //
 // ************************************************************************** //
 
-class WrongAnimal {
+class Dog : public Animal {
 
 	public:
 
-		WrongAnimal( void );
-		WrongAnimal( WrongAnimal const& );
-		~WrongAnimal( void );
-		WrongAnimal & operator = ( WrongAnimal const& );
-
-		std::string	getType( void ) const;
+		Dog( void );
+		Dog( std::string );
+		Dog( Dog const& );
+		~Dog( void );
+		Dog & operator = ( Dog const& );
 
 		void	makeSound( void ) const;
 
-	protected:
-	
-		std::string	_type;
-
 };
 
-#endif /* __WRONGANIMAL_HPP__ */
+#endif /* __DOG_HPP__ */

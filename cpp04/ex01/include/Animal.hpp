@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 12:11:27 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:06:48 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/01 11:22:36 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/01 12:57:39 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 
 // ************************************************************************** //
-//                                WrongAnimal Class                           //
+//                                Animal Class                                //
 // ************************************************************************** //
 
-class WrongAnimal {
+class Animal {
 
 	public:
 
-		WrongAnimal( void );
-		WrongAnimal( WrongAnimal const& );
-		~WrongAnimal( void );
-		WrongAnimal & operator = ( WrongAnimal const& );
+		Animal( void );
+		Animal( std::string );
+		Animal( Animal const& );
+		virtual ~Animal( void );
+		Animal & operator = ( Animal const& );
 
-		std::string	getType( void ) const;
+		virtual std::string	getType( void ) const;
 
-		void	makeSound( void ) const;
+		virtual void		makeSound( void ) const;
 
 	protected:
 	
@@ -38,4 +39,4 @@ class WrongAnimal {
 
 };
 
-#endif /* __WRONGANIMAL_HPP__ */
+#endif /* __ANIMAL_HPP__ */
