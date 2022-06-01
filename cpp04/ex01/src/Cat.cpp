@@ -6,10 +6,11 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:30:51 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:35:43 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:41:58 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 #include "Cat.hpp"
 
 Cat::Cat( void ) {
@@ -17,6 +18,7 @@ Cat::Cat( void ) {
 	std::cout << "Cat default constructor called" << std::endl;
 
 	_type = "Cat";
+	_brain = new Brain();
 
 }
 
@@ -24,7 +26,9 @@ Cat::Cat( Cat const& x ) {
 
 	std::cout << "Cat copy constructor called" << std::endl;
 
-	_type = x._type;
+	_type = x.getType();
+	delete _brain;
+	_brain = x._brain;
 
 }
 
@@ -32,8 +36,11 @@ Cat & Cat::operator = ( Cat const& x ) {
 
 	std::cout << "Cat copy assignment operator called" << std::endl;
 
-	if (this != &x)
-		_type = x._type;
+	if (this != &x) {
+		_type = x.getType();
+		delete _brain;
+		_brain = x._brain;
+	}
 
 	return (*this);
 
@@ -42,6 +49,7 @@ Cat & Cat::operator = ( Cat const& x ) {
 Cat::~Cat( void ) {
 
 	std::cout << "Cat destructor called" << std::endl;
+	delete _brain;
 
 }
 

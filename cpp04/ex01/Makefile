@@ -5,11 +5,13 @@ INCLUDE		=	include/
 SRC_PATH	=	src/
 
 HEADER		=	$(addprefix $(INCLUDE), WrongAnimal.hpp	WrongCat.hpp\
-										Animal.hpp		Cat.hpp			Dog.hpp)
+										Animal.hpp		Cat.hpp\
+										Dog.hpp			Brain.hpp)
 
 SRC			=	$(addprefix $(SRC_PATH), WrongAnimal.cpp	WrongCat.cpp\
 										 Animal.cpp			Cat.cpp\
-										 Dog.cpp			main.cpp)
+										 Dog.cpp			Brain.cpp\
+										 main.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 

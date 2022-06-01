@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 11:22:36 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:57:39 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/01 13:09:18 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/01 13:13:21 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Brain_HPP
-# define Brain_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
 // ************************************************************************** //
-//                                Brain Class                                //
+//                                 Brain Class                                //
 // ************************************************************************** //
 
 class Brain {
@@ -24,19 +24,14 @@ class Brain {
 	public:
 
 		Brain( void );
-		Brain( std::string );
 		Brain( Brain const& );
 		virtual ~Brain( void );
 		Brain & operator = ( Brain const& );
 
-		virtual std::string	getType( void ) const;
-
-		virtual void		makeSound( void ) const;
-
-	protected:
+	private:
 	
-		std::string	_type;
+		std::string	_ideas[100];
 
 };
 
-#endif /* __Brain_HPP__ */
+#endif /* __BRAIN_HPP__ */

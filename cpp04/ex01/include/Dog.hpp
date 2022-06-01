@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 11:46:16 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/01 13:40:25 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 // ************************************************************************** //
 //                                  Dog Class                                 //
@@ -24,12 +25,15 @@ class Dog : public Animal {
 	public:
 
 		Dog( void );
-		Dog( std::string );
 		Dog( Dog const& );
 		~Dog( void );
 		Dog & operator = ( Dog const& );
 
 		void	makeSound( void ) const;
+
+	private:
+
+		Brain *_brain;
 
 };
 
