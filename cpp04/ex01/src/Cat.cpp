@@ -50,6 +50,7 @@ Cat & Cat::operator = ( Cat const& x ) {
 Cat::~Cat( void ) {
 
 	std::cout << "Cat destructor called" << std::endl;
+
 	delete _brain;
 
 }

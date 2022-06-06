@@ -15,7 +15,7 @@ SRC			=	$(addprefix $(SRC_PATH), WrongAnimal.cpp	WrongCat.cpp\
 
 OBJ			=	$(SRC:.cpp=.o)
 
-CC			=	g++
+CC			=	clang++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 

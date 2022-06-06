@@ -49,6 +49,7 @@ Dog & Dog::operator = ( Dog const& x ) {
 Dog::~Dog( void ) {
 
 	std::cout << "Dog destructor called" << std::endl;
+
 	delete _brain;
 
 }
