@@ -24,13 +24,12 @@ int main()
 	for (int i = 5; i < 10; ++i)
 		Animals[i] = new Cat();
 
-	std::cout << "DEEP COPY!!" << std::endl;
 	std::cout << "-----------------------------" << std::endl;
 	Dog copy(*(Dog *)Animals[4]);
 	for (int i = 0; i < 100; ++i)
 	{
-		std::cout << copy.getBrain()->getIdea(i) << "    ";
-		std::cout << ((Dog *)Animals[4])->getBrain()->getIdea(i) << std::endl;
+		std::cout << "source: " << copy.getBrain()->getIdea(i) << "    ";
+		std::cout << "copy: " << ((Dog *)Animals[4])->getBrain()->getIdea(i) << std::endl;
 	}
 	std::cout << "-----------------------------" << std::endl;
 
