@@ -6,7 +6,7 @@
 #    By: cvine <cvine@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 20:47:01 by cvine             #+#    #+#              #
-#    Updated: 2022/06/07 22:08:36 by cvine            ###   ########.fr        #
+#    Updated: 2022/06/08 17:51:49 by cvine            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC			=	$(addprefix $(SRC_PATH), \
 
 OBJ			=	$(SRC:.cpp=.o)
 
-CC			=	clang++
+CC			=	g++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 

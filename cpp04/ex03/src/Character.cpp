@@ -6,65 +6,66 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:18:25 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/07 22:17:07 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/08 20:54:59 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "MateriaSource.hpp"
 #include "Character.hpp"
 
 Character::Character() {
 
-	std::cout << "Character default constructor called" << std::endl;
+	std::cout << "Creating character..." << std::endl;
 
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = NULL;
+		_inventory[i] = 0;
 
 }
 
 Character::Character( std::string name ) : _name(name) {
 
-	std::cout << "Character name constructor called" << std::endl;
+	std::cout << "Creating character " << name << "..." << std::endl;
 
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = NULL;
+		_inventory[i] = 0;
 
 }
 
 Character::Character( Character const &c ) : _name(c._name) {
 
-	std::cout << "Character copy constructor called" << std::endl;
+	std::cout << "Copying character..." << std::endl;
 
 	for (int i = 0; i < 4; i++) {
-		if (c._inventory[i] != NULL)
+		if (c._inventory[i] != 0)
 			_inventory[i] = c._inventory[i]->clone();
 		else
-			_inventory[i] = NULL;
+			_inventory[i] = 0;
 	}
 
 }
 
 Character::~Character() {
 	
-	std::cout << "Character destructor called" << std::endl;
+	std::cout << "Destroying character " << getName() << "..." << std::endl;
 
 	for (int i = 0; i < 4; i++)
-		if (_inventory[i] != NULL)
+		if (_inventory[i] != 0)
 			delete _inventory[i];
 
 }
 
 Character &Character::operator = ( Character const &c ) {
 
-	std::cout << "Character copy assignment operator called" << std::endl;
+	std::cout << "Assigning character..." << std::endl;
 
 	if (this != &c) {
 		_name = c.getName();
 		for (int i = 0; i < 4; i++) {
-			if (c._inventory[i] != NULL) {
+			if (c._inventory[i] != 0) {
 				delete _inventory[i];
 				_inventory[i] = c._inventory[i]->clone();
 			} else
-				_inventory[i] = NULL;
+				_inventory[i] = 0;
 		}
 	}
 
@@ -78,7 +79,10 @@ void Character::equip( AMateria *m ) {
 
 	int i = 0;
 
-	while (_inventory[i] != NULL)
+	if (m == 0)
+		return ;
+
+	while (_inventory[i] != 0)
 		i++;
 
 	if (i < 4) {
@@ -93,11 +97,9 @@ void Character::equip( AMateria *m ) {
 
 void Character::unequip( int idx ) {
 
-
-	if (0 <= idx  && idx <= 3) {
-		// AMateria *tmp = _inventory[idx];
-		_inventory[idx] = NULL;
+	if (0 <= idx  && idx <= 3 && _inventory[idx] != 0) {
 		std::cout << getName() << " dropped " << _inventory[idx]->getType();
+		_inventory[idx] = 0;
 	} else
 		std::cout << "There is no slot with index " << idx;
 
@@ -107,12 +109,12 @@ void Character::unequip( int idx ) {
 
 void Character::use( int idx, ICharacter &target ) {
 
-	if (0 <= idx  && idx <= 3 && _inventory[idx] != NULL)
+	if (0 <= idx  && idx <= 3 && _inventory[idx] != 0)
 		_inventory[idx]->use(target);
 	else if (0 > idx || idx > 3)
-		std::cout << "There is no slot with index " << idx;
-	else if (_inventory[idx] != NULL)
-		std::cout << "The slot is empty";
-
-	std::cout << std::endl;
+		std::cout << "There is no slot with index " << idx << std::endl;
+	else if (_inventory[idx] != 0)
+		std::cout << "The slot is empty" << std::endl;
 }
+
+AMateria	*Character::getMateria( int idx ) const { return (_inventory[idx]); }

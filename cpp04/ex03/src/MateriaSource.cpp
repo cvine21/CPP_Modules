@@ -6,18 +6,18 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:18:25 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/07 22:18:51 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/08 20:56:10 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() { 
+MateriaSource::MateriaSource() {
 
 	std::cout << "MateriaSource default constructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = NULL;
+		_inventory[i] = 0;
 
 }
 
@@ -26,10 +26,10 @@ MateriaSource::MateriaSource( MateriaSource const &c ) {
 	std::cout << "MateriaSource copy constructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++) {
-		if (c._inventory[i] != NULL)
+		if (c._inventory[i] != 0)
 			_inventory[i] = c._inventory[i]->clone();
 		else
-			_inventory[i] = NULL;
+			_inventory[i] = 0;
 	}
 
 }
@@ -39,7 +39,7 @@ MateriaSource::~MateriaSource() {
 	std::cout << "MateriaSource destructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
-		if (_inventory[i] != NULL)
+		if (_inventory[i] != 0)
 			delete _inventory[i];
 
 }
@@ -50,11 +50,11 @@ MateriaSource &MateriaSource::operator = ( MateriaSource const &c ) {
 
 	if (this != &c) {
 		for (int i = 0; i < 4; i++) {
-			if (c._inventory[i] != NULL) {
+			if (c._inventory[i] != 0) {
 				delete _inventory[i];
 				_inventory[i] = c._inventory[i]->clone();
 			} else
-				_inventory[i] = NULL;
+				_inventory[i] = 0;
 		}
 	}
 
@@ -66,24 +66,24 @@ void	MateriaSource::learnMateria( AMateria *m ) {
 
 	int i = 0;
 
-	while (_inventory[i] != NULL)
+	while (_inventory[i] != 0)
 		i++;
 
 	if (i < 4) {
 		_inventory[i] = m;
-		std::cout << "Learned " << m->getType();
+		std::cout << "Learning " << m->getType() << "...";
 	} else
 		std::cout << "The inventory is full";
 
 	std::cout << std::endl;
 }
 
-AMateria *MateriaSource::createMateria( std::string const &type )
-{
+AMateria *MateriaSource::createMateria( std::string const &type ) {
+
 	for (int i = 0; i < 4; i++) {
-		if (this->_inventory[i] != NULL && this->_inventory[i]->getType() == type)
-			return (this->_inventory[i]->clone());
+		if (_inventory[i] != 0 && _inventory[i]->getType() == type)
+			return (_inventory[i]->clone());
 	}
 
-	return (NULL);
+	return (0);
 }

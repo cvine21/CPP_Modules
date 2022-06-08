@@ -6,28 +6,28 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:18:25 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/07 19:06:05 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/08 20:51:05 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure") { 
+Cure::Cure() : AMateria("cure") {
 
-	std::cout << "Cure default constructor called" << std::endl;
+	std::cout << "Creating " << getType() << "..." << std::endl;
 
 }
 
 Cure::Cure( Cure const &m ) : AMateria(m) {
 
-	std::cout << "Cure copy constructor called" << std::endl;
+	std::cout << "Copying " << getType() << "..." << std::endl;
 
 }
 
 Cure &Cure::operator = ( Cure const & ) {
 	
-	std::cout << "Cure copy assignment operator called" << std::endl;
+	std::cout << "Assigning " << getType() << "..." << std::endl;
 
 	return *this;
 
@@ -35,7 +35,7 @@ Cure &Cure::operator = ( Cure const & ) {
 
 Cure::~Cure( void ) {
 
-	std::cout << "Cure destructor called" << std::endl;
+	std::cout << "Destroying " << getType() << "..." << std::endl;
 
 }
 

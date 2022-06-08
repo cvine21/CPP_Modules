@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:35:51 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/07 22:17:30 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/08 19:08:08 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class	MateriaSource : public IMateriaSource {
 
 		void		learnMateria( AMateria * );
 		AMateria	*createMateria( std::string const & );
-                            
+
 };
 
 #endif /* __MATERIASOURCE_HPP__ */
