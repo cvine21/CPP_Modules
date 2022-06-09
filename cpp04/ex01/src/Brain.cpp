@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:25:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 17:35:25 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:12:19 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Brain::Brain( void ) {
 	std::cout << "Brain default constructor called" << std::endl;
 
 	for (int i = 0; i < 100; i++)
-			_ideas[i] = "~rand idea~";
+		_ideas[i] = "~random idea~";
 
 }
 
@@ -42,10 +42,6 @@ Brain & Brain::operator = ( Brain const& x ) {
 
 }
 
-Brain::~Brain( void ) {
+Brain::~Brain( void ) { std::cout << "Brain destructor called" << std::endl; }
 
-	std::cout << "Brain destructor called" << std::endl;
-
-}
-
-std::string	Brain::getIdea( int index ) const {return _ideas[index];}
+std::string	Brain::getIdea( int index ) const { return _ideas[index]; }

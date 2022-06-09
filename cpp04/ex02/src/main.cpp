@@ -6,10 +6,11 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:36:55 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/06 17:57:56 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:25:16 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"

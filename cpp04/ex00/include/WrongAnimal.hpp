@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:11:27 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 13:06:48 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 10:51:27 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class WrongAnimal {
 		WrongAnimal & operator = ( WrongAnimal const& );
 
 		std::string	getType( void ) const;
-
 		void	makeSound( void ) const;
 
 	protected:

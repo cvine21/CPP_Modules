@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:36:55 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 12:55:01 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:04:12 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main()
 	dog->makeSound();
 	std::cout << "Meta animal: ";
 	meta->makeSound();
-
 	std::cout << "WrongCat: ";
 	wrongCat->makeSound();
 

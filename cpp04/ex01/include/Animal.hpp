@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:22:36 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 17:12:59 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:08:15 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Animal {
 		Animal & operator = ( Animal const& );
 
 		virtual std::string	getType( void ) const;
-
 		virtual void		makeSound( void ) const;
 
 	protected:

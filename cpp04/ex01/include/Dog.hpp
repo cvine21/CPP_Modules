@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:31:02 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/01 17:13:15 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:17:04 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Dog : public Animal {
 		Dog & operator = ( Dog const& );
 
 		Brain	*getBrain( void ) const;
-
 		void	makeSound( void ) const;
 
 	private:

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A_Animal.hpp                                       :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 17:59:03 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/06 17:59:09 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/09 11:23:52 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class AAnimal {
 		AAnimal & operator = ( AAnimal const& );
 
 		virtual std::string	getType( void ) const;
-
 		virtual void		makeSound( void ) const = 0;
 
 	protected:
