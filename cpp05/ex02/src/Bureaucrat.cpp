@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include <iostream>
 
 // ************************************************************************** //
 //                                  Mandatory                                 //
@@ -67,6 +69,20 @@ void	Bureaucrat::decrementGrade( void ) {
 	if (getGrade() + 1 > 150)
 		throw GradeTooLowException();
 	_grade++;
+
+};
+
+
+void	Bureaucrat::signForm( Form & f ) {
+
+	try {
+		f.beSigned(*this);
+		std::cout << getName() << " signed " << f.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << getName() << " coudn't sign " << f.getName()
+		<< " because " << e.what() << std::endl;
+	}
 
 };
 

@@ -6,19 +6,22 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:22:36 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 12:33:07 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/10 17:00:40 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+# include "Form.hpp"
 # include <exception>
 # include <iostream>
 
 // ************************************************************************** //
 //                                Bureaucrat Class                            //
 // ************************************************************************** //
+
+class	Form;
 
 class	Bureaucrat {
 
@@ -30,7 +33,7 @@ class	Bureaucrat {
 	public:
 
 		Bureaucrat( void );
-		Bureaucrat( std::string const, int );
+		Bureaucrat( const std::string, int );
 		Bureaucrat( Bureaucrat const & );
 		Bureaucrat & operator = ( Bureaucrat const & );
 		~Bureaucrat( void );
@@ -39,15 +42,17 @@ class	Bureaucrat {
 		int					getGrade( void ) const;
 		void				incrementGrade( void );
 		void				decrementGrade( void );
+		void				signForm( Form & );
+		void				executeForm( Form const & );
 
 		class	GradeTooHighException : public std::exception {
 			public:
-				const char* what() const throw();
+				const char*	what() const throw();
 		};
 
 		class	GradeTooLowException : public std::exception {
 			public:
-				const char* what() const throw();
+				const char*	what() const throw();
 		};
 
 };

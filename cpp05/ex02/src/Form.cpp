@@ -1,78 +1,79 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 14:41:28 by cvine             #+#    #+#             */
+/*   Created: 2022/06/10 10:38:47 by cvine             #+#    #+#             */
 /*   Updated: 2022/06/10 17:21:53 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include <iostream>
 
 // ************************************************************************** //
 //                                  Mandatory                                 //
 // ************************************************************************** //
 
-Bureaucrat::Bureaucrat( void ) : _name("Noname"), _grade(150) {}
+Form::Form( void )
+: _name("Noname"), _isSign(false), _gradeToSign(150), _gradeToExec(150) {}
 
-Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name) {
+Form
+::Form(const std::string name, int const gradeToSign, int const gradeToExec)
+: _name(name), _isSign(false), _gradeToSign(gradeToSign),
+_gradeToExec(gradeToExec) {
 
-	if (grade > 150) {
+	if (gradeToSign > 150 || gradeToExec > 150)
 		throw GradeTooLowException();
-	} else if (grade < 1) {
+	else if (gradeToSign < 1 || gradeToExec < 1)
 		throw GradeTooHighException();
-	}
-	_grade = grade;
 
 }
 
-Bureaucrat::Bureaucrat( Bureaucrat const & b)
-: _name(b.getName()), _grade(b.getGrade()) { }
+Form::Form( Form const & f )
+: _name(f.getName()), _isSign(f.getIsSign()), _gradeToSign(f.getGradeToSign()),
+_gradeToExec(f.getGradeToExec()) {}
 
-Bureaucrat & Bureaucrat::operator = ( Bureaucrat const & b ) {
+Form::~Form( void ) {}
 
-	if (this != &b)
-		_grade = b.getGrade();
+Form & Form::operator = ( Form const & f ) {
+
+	if (this != &f)
+		_isSign = f._isSign;
 
 	return *this;
 
 }
 
-Bureaucrat::~Bureaucrat( void ) {}
-
 // ************************************************************************** //
 //                                  Accessors                                 //
 // ************************************************************************** //
 
-const std::string	Bureaucrat::getName( void ) const { return _name; }
-int					Bureaucrat::getGrade( void ) const { return _grade; }
+const std::string	Form::getName( void ) const { return _name; }
+bool				Form::getIsSign( void ) const { return _isSign; }
+int					Form::getGradeToSign( void ) const { return _gradeToSign; }
+int					Form::getGradeToExec( void ) const { return _gradeToExec; }
 
 // ************************************************************************** //
 //                                Other functions                             //
 // ************************************************************************** //
 
-void	Bureaucrat::incrementGrade( void ) {
+void	Form::beSigned( Bureaucrat & b ) {
 
-	if (getGrade() - 1 < 1)
-		throw GradeTooHighException();
-	_grade--;
-
-};
-
-void	Bureaucrat::decrementGrade( void ) { 
-
-	if (getGrade() + 1 > 150)
+	if (b.getGrade() > getGradeToSign())
 		throw GradeTooLowException();
-	_grade++;
+	_isSign = true;
 
-};
+}
 
-std::ostream & operator << ( std::ostream &out, Bureaucrat const & b ) {
+std::ostream & operator << ( std::ostream &out, Form const & b ) {
 
-	out << b.getName() << ", bureaucrat grade " << b.getGrade();
+	out << b.getName() << (b.getIsSign() ? " is signed, " : " is not signed, ")
+	<< "grade to sign: "<< b.getGradeToSign()
+	<<", grade to execute: " << b.getGradeToExec();
 
 	return out;
 
@@ -82,13 +83,13 @@ std::ostream & operator << ( std::ostream &out, Bureaucrat const & b ) {
 //                                Exception classes                           //
 // ************************************************************************** //
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw() {
+const char*	Form::GradeTooHighException::what() const throw() {
 
 	return "Grade is too high!";
 
 }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw() {
+const char*	Form::GradeTooLowException::what() const throw() {
 
 	return "Grade is too low!";
 
