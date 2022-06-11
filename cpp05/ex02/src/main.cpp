@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:14:04 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/11 12:22:09 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/11 13:57:57 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,17 @@ int main () {
 
 	/* SHRUBBERY CREATION */
 	std::cout << "SHRUBBERY CREATION:" << std::endl;
-	try {
-		f.execute(bob);
-	}
-	catch (std::exception & e) {
-		std::cout << "ShrubberyCreationForm execution failed because of ";
-		std::cout << bob.getName() << "'s " << e.what() << std::endl;
-	}
+	bob.executeForm(f);
 	std::cout << std::endl;
 
 	/* ROBOTOMY */
 	std::cout << "ROBOTOMY:" << std::endl;
-	try {
-		r.execute(bob);
-	}
-	catch (std::exception & e) {
-		std::cout << "RobotomyRequestForm execution failed because of ";
-		std::cout << bob.getName() << "'s " << e.what() << std::endl;
-	}
+	bob.executeForm(r);
 	std::cout << std::endl;
 
 	/* PRESIDENTIAL PARDON */
 	std::cout << "PRESIDENTIAL PARDON:" << std::endl;
-	try {
-		p.execute(bob);
-	}
-	catch (std::exception & e) {
-		std::cout << "PresidentialPardonForm execution failed because of ";
-		std::cout << bob.getName() << "'s " << e.what() << std::endl;
-	}
+	bob.executeForm(p);
 	std::cout << std::endl;
 
 	/* SUCCESSFULLY EXECUTION */
@@ -72,35 +54,17 @@ int main () {
 
 	/* SHRUBBERY CREATION */
 	std::cout << "SHRUBBERY CREATION:" << std::endl;
-	try {
-		f.execute(mike);
-	}
-	catch (std::exception & e) {
-		std::cout << "ShrubberyCreationForm execution failed because of ";
-		std::cout << mike.getName() << "'s " << e.what() << std::endl;
-	}
+	mike.executeForm(f);
 	std::cout << std::endl;
 
 	/* ROBOTOMY */
 	std::cout << "ROBOTOMY:" << std::endl;
-	try {
-		r.execute(mike);
-	}
-	catch (std::exception & e) {
-		std::cout << "RobotomyRequestForm execution failed because of ";
-		std::cout << mike.getName() << "'s " << e.what() << std::endl;
-	}
+	mike.executeForm(r);
 	std::cout << std::endl;
 
 	/* PRESIDENTIAL PARDON */
 	std::cout << "PRESIDENTIAL PARDON:" << std::endl;
-	try {
-		p.execute(mike);
-	}
-	catch (std::exception & e) {
-		std::cout << "PresidentialPardonForm execution failed because of ";
-		std::cout << mike.getName() << "'s " << e.what() << std::endl;
-	}
+	mike.executeForm(p);
 
 	return 0;
 }

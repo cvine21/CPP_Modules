@@ -6,13 +6,15 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:28 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 17:21:53 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/11 13:59:52 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <exception>
 #include <iostream>
+
 
 // ************************************************************************** //
 //                                  Mandatory                                 //
@@ -72,7 +74,6 @@ void	Bureaucrat::decrementGrade( void ) {
 
 };
 
-
 void	Bureaucrat::signForm( Form & f ) {
 
 	try {
@@ -85,6 +86,18 @@ void	Bureaucrat::signForm( Form & f ) {
 	}
 
 };
+
+void	Bureaucrat::executeForm( Form const & f ) {
+
+	try {
+		f.execute(*this);
+	}
+	catch (std::exception & e) {
+		std::cout << "Execution failed because of ";
+		std::cout << getName() << "'s " << e.what() << std::endl;
+	}
+
+}
 
 std::ostream & operator << ( std::ostream &out, Bureaucrat const & b ) {
 
