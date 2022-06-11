@@ -6,12 +6,25 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:04:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 15:54:27 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/11 12:27:26 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
+
+# define TREE	\
+"     ccee88oo          \n\
+   C8O8O8Q8PoOb o8oo    \n\
+  dOB69QO8PdUOpugoO9bD  \n\
+ CgggbU8OU qOp qOdoUOdcb\n\
+	6OuU  /p u gcoUodpP \n\
+	   \\\\//  /douUP   \n\
+		 \\\\////       \n\
+		  |||/\\        \n\
+		  |||\\/        \n\
+		  |||||         \n\
+  .....\\//||||\\....  \n"
 
 # include "Form.hpp"
 # include "Bureaucrat.hpp"

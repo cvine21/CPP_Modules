@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:08:48 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 17:45:07 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/11 12:04:01 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,10 @@ const std::string	PresidentialPardonForm::getTarget( void ) const {
 
 void	PresidentialPardonForm::execute( Bureaucrat const & executor ) const {
 
-	try {
+	if (executor.getGrade() > getGradeToExec())
+		throw GradeTooLowException();
 
-		if (executor.getGrade() > getGradeToExec())
-			throw GradeTooLowException();
-
-		std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox"
-		<< std::endl;
-	}
-	catch (std::exception & e) {
-		std::cout << "Presidential pardon failed"
-		<< executor.getName() << "'s " << e.what() << std::endl;
-	}
+	std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox";
+	std::cout << std::endl;
 
 }

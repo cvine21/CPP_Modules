@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 17:08:48 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 17:36:11 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/11 12:47:18 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 // ************************************************************************** //
 //                                  Mandatory                                 //
@@ -57,18 +58,17 @@ const std::string	RobotomyRequestForm::getTarget( void ) const {
 
 void	RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
 
-	try {
+	srand (time(NULL));
 
-		if (executor.getGrade() > getGradeToExec())
-			throw GradeTooLowException();
+	if (executor.getGrade() > getGradeToExec())
+		throw GradeTooLowException();
 
-		std::cout << "<Some drilling noises>" << std::endl;
-		std::cout << getTarget() << " has been robotomized successfully 50%"
-		<< " of the time " << std::endl;
+	std::cout << "Some drilling noises..." << std::endl;
+	if (rand() % 2) {
+		std::cout << getTarget() << " has been robotomized successfully";
+	} else {
+		std::cout << getTarget() << " robotomy failed";
 	}
-	catch (std::exception & e) {
-		std::cout << "Robotomy failed because of "
-		<< executor.getName() << "'s " << e.what() << std::endl;
-	}
+	std::cout << std::endl;
 
 }
