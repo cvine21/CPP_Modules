@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:28 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/10 17:21:53 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/12 12:31:51 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	Bureaucrat::decrementGrade( void ) {
 	_grade++;
 
 };
-
 
 void	Bureaucrat::signForm( Form & f ) {
 

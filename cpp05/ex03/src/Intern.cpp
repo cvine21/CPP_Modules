@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:41:28 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/11 16:17:10 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/12 12:19:41 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "Form.hpp"
 #include <exception>
 #include <iostream>
-
 
 // ************************************************************************** //
 //                                  Mandatory                                 //
@@ -32,39 +31,51 @@ Intern & Intern::operator = ( Intern const & ) { return *this; }
 Intern::~Intern( void ) {}
 
 // ************************************************************************** //
-//                                  Accessors                                 //
-// ************************************************************************** //
-
-
-
-
-// ************************************************************************** //
 //                                Other functions                             //
 // ************************************************************************** //
 
+static Form	*newShurbberyCreationForm( std::string target ) {
+
+	return (new ShrubberyCreationForm(target));
+
+}
+
+static Form	*newRobotomyRequestForm( std::string target ) {
+
+	return (new RobotomyRequestForm(target));
+
+}
+
+static Form	*newPresidentialPardonForm( std::string target ) {
+
+	return (new PresidentialPardonForm(target));
+
+}
+
 Form	*Intern::makeForm( std::string name, std::string target ) {
 
-	ShrubberyCreationForm	f(target);
-	RobotomyRequestForm		r(target);
-	PresidentialPardonForm	p(target);
+	std::string	formNames[3] = {
+		"shrubbery creation", "robotomy request", "presidential pardon"};
 
-	int	i = 0;
-	const std::string formNames[] = {f.getName(), r.getName(), p.getName()};
+	Form	*(*form[3])(std::string target) = {newShurbberyCreationForm,
+		newRobotomyRequestForm, newPresidentialPardonForm};
 
-	while (i < 3 && formNames[i] != name)
-		i++;
-
-	if (i == 3)
-		throw NonExistentNameException();
-
-	switch(i) {
-		case 0: return (new ShrubberyCreationForm(target));
-		case 1:	return (new RobotomyRequestForm(target));
-		case 2: return (new PresidentialPardonForm(target));
+	for (int i = 0; i < 3; i++) {
+		if (name == formNames[i]) {
+			std::cout << "Intern created " << formNames[i] << " form";
+			std::cout << std::endl;
+			return	(*form[i])(target);
+		}
 	}
+
+	throw NonExistentNameException();
 
 	return NULL;
 }
+
+// ************************************************************************** //
+//                                Exception classes                           //
+// ************************************************************************** //
 
 const char*	Intern::NonExistentNameException::what() const throw() {
 

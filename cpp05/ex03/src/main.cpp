@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:14:04 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/11 16:35:02 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/12 12:21:08 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,59 +19,30 @@
 #include <iostream>
 #include <exception>
 
+static void	test(std::string name, std::string target) {
+
+	Bureaucrat	mike("Mike", 1);
+	Intern		someRandomIntern;
+	Form		*someRandomForm;
+
+	std::cout << "-----------------------------------------------" << std::endl;
+	try {
+		someRandomForm = someRandomIntern.makeForm(name, target);
+		mike.executeForm(*someRandomForm);
+		delete someRandomForm;
+	}
+	catch (std::exception & e) {
+		std::cout << "Unable to create form: " << e.what() << std::endl;
+	}
+
+}
+
 int main () {
 
-	Bureaucrat mike("Mike", 1);
-	Intern someRandomIntern;
-
-	Form *scf;
-	Form *rrf;
-	Form *ppf;
-	Form *random;
-
-	try {
-		scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
-		std::cout << "Intern created " << scf->getName() << std::endl;
-		mike.executeForm(*scf);
-	}
-	catch (std::exception & e) {
-		std::cout << "Unable to create form: " << e.what() << std::endl;
-	}
-
-	std::cout << std:: endl;
-	try {
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		std::cout << "Intern created " << rrf->getName() << std::endl;
-		mike.executeForm(*rrf);
-	}
-	catch (std::exception & e) {
-		std::cout << "Unable to create form: " << e.what() << std::endl;
-	}
-
-	std::cout << std:: endl;	
-	try {
-		ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
-		std::cout << "Intern created " << ppf->getName() << std::endl;
-		mike.executeForm(*ppf);
-	}
-	catch (std::exception & e) {
-		std::cout << "Unable to create form: " << e.what() << std::endl;
-	}
-
-	std::cout << std:: endl;
-	try {
-		random = someRandomIntern.makeForm("NON-EXISTENT", "Bender");
-		std::cout << "Intern created " << random->getName() << std::endl;
-		mike.executeForm(*random);
-	}
-	catch (std::exception & e) {
-		std::cout << "Unable to create form: " << e.what() << std::endl;
-	}
-
-	// delete scf;
-	// delete rrf;
-	// delete ppf;
-	// delete random;
+	test("shrubbery creation", "Bender");
+	test("robotomy request", "Bender");
+	test("presidential pardon", "Bender");
+	test("NON-EXISTENT", "Bender");
 
 	return 0;
 }
