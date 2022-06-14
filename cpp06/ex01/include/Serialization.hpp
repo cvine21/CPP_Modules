@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 15:42:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 14:14:19 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/14 15:02:22 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/14 16:52:19 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "String.hpp"
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
-int main(int argc, char **argv) {
+#include <cstdint>
+#include <string>
 
-	String	str(argv[1]);
-	char	c;
-	int		i;
-	float	f;
-	double	d;
+struct	Data {
 
-	if (argc != 2) {
-		std::cout << "Invalid number of arguments";
-		return 0;
-	}
-	
-	c = static_cast<char>(str);
-	i = static_cast<int>(str);
-	f = static_cast<float>(str);
-	d = static_cast<double>(str);
+	std::string	name;
+	int			age;
 
-	return 0;
+};
 
-}
+uintptr_t	serialize(Data *ptr);
+Data*		deserialize(uintptr_t raw);
+
+#endif /* __SERIALIZATION_HPP__ */

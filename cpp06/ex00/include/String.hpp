@@ -6,15 +6,22 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:36:30 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 13:07:44 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/14 14:38:08 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef STRING_HPP
+# define STRING_HPP
 
 #include <iostream>
 #include <exception>
 
+// ************************************************************************** //
+//                                String Class  	                          //
+// ************************************************************************** //
+
 class	String {
-	
+
 	private:
 
 		std::string	_str;
@@ -35,3 +42,5 @@ class	String {
 		std::string	getStr( void );
 
 };
+
+#endif /* __STRING_HPP__ */
