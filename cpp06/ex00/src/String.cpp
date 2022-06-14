@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:37:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 13:07:07 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/14 19:56:24 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,9 @@ String::operator char () {
 	try {
 		c = toChar(getStr());
 		std::cout << "'" << c << "'" << std::endl;
-	}
-	catch(std::invalid_argument const& ex) {
+	} catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
-	}
-	catch(const char *str) {
+	} catch(const char *str) {
 		std::cout << str << std::endl;
 	}
 
@@ -91,11 +89,9 @@ String::operator int () {
 	try {
 		i = stoi(getStr());
 		std::cout << i << std::endl;
-	}
-	catch(std::invalid_argument const& ex) {
+	} catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
-	}
-	catch(std::out_of_range const& ex) {
+	} catch(std::out_of_range const& ex) {
 		std::cout << "out of range" << std::endl;
 	}
 
@@ -113,11 +109,9 @@ String::operator float () {
 		f = stof(getStr());
 		std::cout << std::fixed << std::setprecision(1);
 		std::cout << f << "f" << std::endl;
-	}
-	catch(std::invalid_argument const& ex) {
+	} catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
-	}
-	catch(std::out_of_range const& ex) {
+	} catch(std::out_of_range const& ex) {
 		std::cout << "out of range" << std::endl;
 	}
 
@@ -135,11 +129,9 @@ String::operator double () {
 		d = stod(getStr());
 		std::cout << std::fixed << std::setprecision(1);
 		std::cout << d << std::endl;
-	}
-	catch(std::invalid_argument const& ex) {
+	} catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
-	}
-	catch(std::out_of_range const& ex) {
+	} catch(std::out_of_range const& ex) {
 		std::cout << "out of range" << std::endl;
 	}
 

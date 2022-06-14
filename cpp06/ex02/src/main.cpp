@@ -6,37 +6,28 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:40:52 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 17:30:22 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/14 20:17:26 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
+#include "identify.hpp"
+#include "Base.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <exception>
 #include <iostream>
-#include <typeinfo>
 
-int main() {
+int main () {
 
-	Data		ptr;
-	Data		*deserializedPtr;
-	uintptr_t	raw;
+	srand(time(NULL));
 
-	ptr.name = "Raphael";
-	ptr.age	= 23;
+	Base *rand1 = generate();
+	Base *rand2 = generate();
+	Base *rand3 = generate();
 
-	std::cout << "Source structure: " << std::endl;
-	std::cout << "    name: " << ptr.name << std::endl;
-	std::cout << "    age: " << ptr.age << std::endl;
-	std::cout << "    address: " << &ptr << std::endl;
-	std::cout << std::endl;
-
-	raw = serialize(&ptr);
-	deserializedPtr = deserialize(raw);
-
-	std::cout << "Deserialized structure: " << std::endl;
-	std::cout << "    name: " << deserializedPtr->name << std::endl;
-	std::cout << "    age: " << deserializedPtr->age << std::endl;
-	std::cout << "    address: " << deserializedPtr << std::endl;
+	identify(rand1);
+	identify(rand2);
+	identify(rand3);
 
 	return 0;
-
 }
