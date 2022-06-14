@@ -32,6 +32,24 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"utility": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"ostream": "cpp",
+		"iostream": "cpp",
+		"__bit_reference": "cpp",
+		"__errc": "cpp",
+		"__locale": "cpp",
+		"__mutex_base": "cpp",
+		"__threading_support": "cpp",
+		"bitset": "cpp",
+		"chrono": "cpp",
+		"cstdarg": "cpp",
+		"ctime": "cpp",
+		"ios": "cpp",
+		"istream": "cpp",
+		"locale": "cpp",
+		"mutex": "cpp",
+		"ratio": "cpp",
+		"streambuf": "cpp",
+		"system_error": "cpp"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:36:30 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/13 17:56:23 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:07:44 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,11 @@ class	String {
 		String & operator = ( String const & );
 		~String();
 
-		std::string getStr( void );
-
 		operator char ();
 		operator int ();
 		operator float ();
 		operator double ();
-		
-		class	NonDisplayableException : public std::exception {
-			public:
-				const char *what() const throw();
-		};
+
+		std::string	getStr( void );
 
 };

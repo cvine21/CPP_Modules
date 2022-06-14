@@ -1,4 +1,4 @@
-NAME		=	typecast
+NAME		=	convert
 
 INCLUDE		=	include/
 

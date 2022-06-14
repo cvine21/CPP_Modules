@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:37:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/13 19:14:46 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/14 13:07:07 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,74 +45,104 @@ std::string String::getStr( void ) { return _str; }
 //                                Other functions                             //
 // ************************************************************************** //
 
+static char	toChar( std::string str ) {
+
+	int		i;
+	char	c;
+
+	i = stoi(str);
+	c = static_cast<char>(i);
+
+	if (i < CHAR_MIN || i > CHAR_MAX) {
+		throw "out of range";
+	} else if (isprint(c) == 0)
+		throw "Non displayable";
+
+	return c;
+
+}
+
+String::operator char () {
+
+	char	c;
+
+	std::cout << "char: ";
+
+	try {
+		c = toChar(getStr());
+		std::cout << "'" << c << "'" << std::endl;
+	}
+	catch(std::invalid_argument const& ex) {
+		std::cout << "impossible" << std::endl;
+	}
+	catch(const char *str) {
+		std::cout << str << std::endl;
+	}
+
+	return c;
+}
+
 String::operator int () {
 
-	int	casted = 0;
+	int	i;
 
 	std::cout << "int: ";
 
 	try {
-		casted = stoi(getStr());
-		std::cout << casted << std::endl;
+		i = stoi(getStr());
+		std::cout << i << std::endl;
 	}
 	catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
 	}
 	catch(std::out_of_range const& ex) {
-		std::cout << "impossible" << std::endl;
+		std::cout << "out of range" << std::endl;
 	}
 
-	return casted;
+	return i;
+
 }
 
 String::operator float () {
 
-	float	casted = 0;
+	float	f;
 
 	std::cout << "float: ";
 
 	try {
-		casted = stof(getStr());
+		f = stof(getStr());
 		std::cout << std::fixed << std::setprecision(1);
-		std::cout << casted << "f" << std::endl;
+		std::cout << f << "f" << std::endl;
 	}
 	catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
 	}
 	catch(std::out_of_range const& ex) {
-		std::cout << "impossible" << std::endl;
+		std::cout << "out of range" << std::endl;
 	}
 
-	return casted;
+	return f;
+
 }
 
 String::operator double () {
 
-	double	casted = 0;
+	double	d;
 
-	std::cout << "float: ";
+	std::cout << "double: ";
 
 	try {
-		casted = stod(getStr());
+		d = stod(getStr());
 		std::cout << std::fixed << std::setprecision(1);
-		std::cout << casted << std::endl;
+		std::cout << d << std::endl;
 	}
 	catch(std::invalid_argument const& ex) {
 		std::cout << "impossible" << std::endl;
 	}
 	catch(std::out_of_range const& ex) {
-		std::cout << "impossible" << std::endl;
+		std::cout << "out of range" << std::endl;
 	}
 
-	return casted;
-}
-
-// ************************************************************************** //
-//                                Exception classes                           //
-// ************************************************************************** //
-
-const char *String::NonDisplayableException::what() const throw() {
-
-	return "Non displayable";
+	return d;
 
 }
