@@ -5,30 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 15:42:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 15:22:37 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/15 16:24:20 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/15 16:38:02 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "String.hpp"
+#include "whatever.hpp"
+#include <iostream>
 
-int main(int argc, char **argv) {
+int main( void ) {
 
-	if (argc != 2) {
-		std::cout << "Invalid number of arguments" << std::endl;
-		return 0;
-	}
+	int	a = 2;
+	int	b = 3;
+
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 	
-	String	str(argv[1]);
-	char	c;
-	int		i;
-	float	f;
-	double	d;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 	
-	c = static_cast<char>(str);
-	i = static_cast<int>(str);
-	f = static_cast<float>(str);
-	d = static_cast<double>(str);
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
 	return 0;
 

@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 15:42:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 15:22:37 by cvine            ###   ########.fr       */
+/*   Created: 2022/06/15 15:52:18 by cvine             #+#    #+#             */
+/*   Updated: 2022/06/15 16:40:55 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "String.hpp"
+template <typename Value>
+void	iter( Value &a, Value &b ) {
 
-int main(int argc, char **argv) {
+	Value	tmp = a;
 
-	if (argc != 2) {
-		std::cout << "Invalid number of arguments" << std::endl;
-		return 0;
-	}
-	
-	String	str(argv[1]);
-	char	c;
-	int		i;
-	float	f;
-	double	d;
-	
-	c = static_cast<char>(str);
-	i = static_cast<int>(str);
-	f = static_cast<float>(str);
-	d = static_cast<double>(str);
-
-	return 0;
+	a = b;
+	b = tmp;
 
 }
