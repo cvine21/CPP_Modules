@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:45:55 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 20:16:23 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/15 11:43:42 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 Base	*generate( void );
 void	identify(Base* p);
+void	identify(Base &p);
 
 #endif

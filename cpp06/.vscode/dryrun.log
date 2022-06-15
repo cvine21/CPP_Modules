@@ -1,6 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/cvine/42cursus/cpp_modules/cpp06'
-make: Leaving directory `/Users/cvine/42cursus/cpp_modules/cpp06'
- 
-make: *** No targets specified and no makefile found.  Stop.
-
