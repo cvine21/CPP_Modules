@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:24:20 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 17:02:12 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/15 20:24:45 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int main( void ) {
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 	
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+	std::string	c = "chaine1";
+	std::string	d = "chaine2";
 	
 	::swap( c, d );
 	std::cout << "c = " << c << ", d = " << d << std::endl;

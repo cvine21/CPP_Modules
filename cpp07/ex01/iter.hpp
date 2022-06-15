@@ -6,16 +6,15 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:52:18 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 16:40:55 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/15 20:26:45 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template <typename Value>
-void	iter( Value &a, Value &b ) {
+#include <iostream>
 
-	Value	tmp = a;
+template <typename T>
+void	iter( T arr[], int len, void f(T const & x) ) {
 
-	a = b;
-	b = tmp;
+	for (int i = 0; i < len; i++) { f(arr[i]); }
 
 }
