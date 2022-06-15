@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:36:15 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 15:12:09 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/15 15:15:11 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Base	*generate( void ) {
 void	identify(Base	*p) {
 
 	if (p == NULL) {
-		std::cout << "Type: unknown" << std::endl;
+		std::cout << "unknown" << std::endl;
 		return ;
 	}
 

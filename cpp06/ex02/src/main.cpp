@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:40:52 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 15:12:46 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/15 15:16:02 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int main () {
 	identify(ref2);
 	std::cout << std::endl << "Identifying ref3..." << std::endl;
 	identify(ref3);
+
+	delete rand1;
+	delete rand2;
+	delete rand3;
 
 	return 0;
 }
