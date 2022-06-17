@@ -1,4 +1,4 @@
-NAME		=	templ
+NAME		=	template
 
 HEADER		=	whatever.hpp
 

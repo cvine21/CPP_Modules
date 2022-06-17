@@ -1,4 +1,4 @@
-NAME		=	templ
+NAME		=	template
 
 HEADER		=	iter.hpp
 

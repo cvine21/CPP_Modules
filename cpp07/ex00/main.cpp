@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:24:20 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 20:24:45 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:46:56 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main( void ) {
 	Awesome	f(4);
 
 	::swap( e, f );
-	std::cout << "e = " << a << ", f = " << b << std::endl;
+	std::cout << "e = " << e << ", f = " << f << std::endl;
 	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
 	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
 

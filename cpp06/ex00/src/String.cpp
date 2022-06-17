@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:37:39 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/14 19:56:24 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:30:57 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ String::operator char () {
 	char	c;
 
 	std::cout << "char: ";
-
 	try {
 		c = toChar(getStr());
 		std::cout << "'" << c << "'" << std::endl;
@@ -78,6 +77,7 @@ String::operator char () {
 	}
 
 	return c;
+
 }
 
 String::operator int () {
@@ -85,7 +85,6 @@ String::operator int () {
 	int	i;
 
 	std::cout << "int: ";
-
 	try {
 		i = stoi(getStr());
 		std::cout << i << std::endl;
@@ -104,7 +103,6 @@ String::operator float () {
 	float	f;
 
 	std::cout << "float: ";
-
 	try {
 		f = stof(getStr());
 		std::cout << std::fixed << std::setprecision(1);
@@ -124,7 +122,6 @@ String::operator double () {
 	double	d;
 
 	std::cout << "double: ";
-
 	try {
 		d = stod(getStr());
 		std::cout << std::fixed << std::setprecision(1);

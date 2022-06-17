@@ -1,4 +1,4 @@
-NAME		=	templ
+NAME		=	template
 
 INClUDE		=	Array.hpp	Array.tpp
 

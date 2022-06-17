@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:20:30 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/16 17:37:31 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:55:07 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,28 @@ int main(int, char**)
             return 1;
         }
     }
+	try {
+        numbers[0] = 0;
+		std::cout << "numbers[0] = 0 : " << "Success" << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << "Index cannot be negative" << std::endl;
+    }
     try {
         numbers[-2] = 0;
     } catch(const std::exception& e) {
-        std::cerr << e.what() << '\n';
+        std::cerr << "numbers[-2] = 0 : " << "Index cannot be negative" << std::endl;
     }
     try {
         numbers[MAX_VAL] = 0;
     } catch(const std::exception& e) {
-        std::cerr << e.what() << '\n';
+        std::cerr << "numbers[MAX_VAL] = 0 : " << "Index is out of bounds" << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++) {
         numbers[i] = rand();
     }
 
-	std::cout << numbers.size() << std::endl;
+	std::cout << "Array's size: " << numbers.size() << std::endl;
 
     delete [] mirror;
 

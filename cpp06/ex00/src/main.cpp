@@ -6,7 +6,7 @@
 /*   By: cvine <cvine@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:42:44 by cvine             #+#    #+#             */
-/*   Updated: 2022/06/15 15:22:37 by cvine            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:34:54 by cvine            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv) {
 
 	if (argc != 2) {
-		std::cout << "Invalid number of arguments" << std::endl;
+		std::cout << "Error: Invalid number of arguments" << std::endl;
 		return 0;
 	}
 	
