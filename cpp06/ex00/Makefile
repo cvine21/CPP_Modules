@@ -10,7 +10,7 @@ SRC			=	$(addprefix $(SRC_PATH), main.cpp	String.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
-CC			=	g++
+CC			=	clang++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I$(INCLUDE)
 
