@@ -1,23 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cvine <cvine@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/21 11:17:10 by cvine             #+#    #+#              #
+#    Updated: 2022/06/21 11:26:06 by cvine            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		=	span
 
-INClUDE		=	Span.hpp
+INCL_PATH	=	include/
 
-SRC			=	main.cpp	Span.cpp
+SRC_PATH	=	src/
+
+HEADER		=	$(addprefix $(INCL_PATH), Span.hpp)
+
+SRC			=	$(addprefix $(SRC_PATH), Span.cpp main.cpp)
 
 OBJ			=	$(SRC:.cpp=.o)
 
-CC			=	g++
+CC			=	clang++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I$(INCL_PATH)
 
 .PHONY		=	all clean flcean re
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ) $(INClUDE)
+$(NAME)		:	$(OBJ) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJ) -o $@
 
-%.o			:	%.cpp $(INClUDE)
+%.o			:	%.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean		:
